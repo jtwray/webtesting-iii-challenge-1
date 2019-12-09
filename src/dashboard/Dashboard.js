@@ -3,17 +3,20 @@ import React from 'react';
 import Display from '../display/Display';
 import Controls from '../controls/Controls';
 
-class Dashboard extends React.Component {
-  state = {
-    locked: false,
-    closed: false,
-  };
 
+class Dashboard extends React.Component {
+ state = {
+      locked: false,
+      closed: false,
+    };
+ 
+  
   render() {
     const { closed, locked } = this.state;
 
     return (
       <>
+     
         <Display locked={locked} closed={closed} />
         <Controls
           locked={locked}
@@ -32,6 +35,10 @@ class Dashboard extends React.Component {
   toggleClosed = () => {
     this.setState(prev => ({ closed: !prev.closed }));
   };
+   onChange=()=>{
+    this.setState(prev=>({isChecked: !prev.isChecked}));
+  }
+
 }
 
 export default Dashboard;
