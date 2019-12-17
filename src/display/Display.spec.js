@@ -29,7 +29,7 @@ describe('Display', () => {
         expect(findByText(/CLOSED/i)).not.toBe()
         const openClass = document.querySelector(".panel>div").classList['1']
         expect(openClass).toBe("green-led")
-    })
+    }) 
     test('displays locked and red led when locked is true', () => {
         const display = render(<Display locked={true} closed={true} />)
         const { getByText, findByText, queryByText } = display
